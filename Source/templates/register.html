@@ -1,0 +1,63 @@
+{% extends "layout.html" %} {% block content %}
+<div class="content-section">
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <legend class="border-bottom mb-4">Join Today</legend>
+      <div class="form-group">
+        {{ form.Name.label(class="form-control-label") }} {% if form.Name.errors
+        %} {{ form.Name(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Name.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.Name(class="form-control form-control-lg") }} {%
+        endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.batteryID.label(class="form-control-label") }} {% if
+        form.batteryID.errors %} {{ form.batteryID(class="form-control
+        form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.batteryID.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.batteryID(class="form-control form-control-lg") }} {%
+        endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.Date.label(class="form-control-label") }} {% if form.Date.errors
+        %} {{ form.Date(class="form-control form-control-lg is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.Date.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.Date(class="form-control form-control-lg") }} {%
+        endif %}
+      </div>
+
+      <div class="form-group">
+        {{ form.submit.label(class="form-control-label") }} {% if
+        form.submit.errors %} {{ form.submit(class="form-control form-control-lg
+        is-invalid") }}
+        <div class="invalid-feedback">
+          {% for error in form.submit.errors %}
+          <span>{{ error }}</span>
+          {% endfor %}
+        </div>
+        {% else %} {{ form.submit(class="form-control form-control-lg") }} {%
+        endif %}
+      </div>
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+</div>
+
+{% endblock content %}
